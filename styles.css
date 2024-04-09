@@ -15,3 +15,11 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+
+#board div {
+  /* board = 540x540, divide into 3x3 tiles --> 180x180 per div */
+  width: 180px;
+  height: 180px;
+  
+  /* background-size: cover; */
+}
