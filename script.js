@@ -11,5 +11,6 @@ function setGame() {
     
     let tile = document.createElement("div")
     tile.id = i.toString()
+    document.getElementById("board").appendChild(tile)
   }
 }
