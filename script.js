@@ -1,4 +1,4 @@
-
+let currMoleTile;
 
 window.onload = function () {
   setGame()
@@ -13,4 +13,17 @@ function setGame() {
     tile.id = i.toString()
     document.getElementById("board").appendChild(tile)
   }
+}
+
+function getRandomTile() {
+    let num = Math.floor(Math.random() * 9)
+    return num.toString()
+}
+
+function setMole() {
+
+  let mole = document.createElement("img")
+  mole.src = "./monty-mole.png"
+
+  let num = getRandomTile()
 }
