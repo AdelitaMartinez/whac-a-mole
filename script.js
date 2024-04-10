@@ -13,6 +13,8 @@ function setGame() {
     tile.id = i.toString()
     document.getElementById("board").appendChild(tile)
   }
+
+  setInterval(setMole, 2000) // 2000 miliseconds = 2 seconds
 }
 
 function getRandomTile() {
@@ -26,4 +28,6 @@ function setMole() {
   mole.src = "./monty-mole.png"
 
   let num = getRandomTile()
+  currMoleTile = document.getElementById(num)
+  currMoleTile.appendChild(mole)
 }
