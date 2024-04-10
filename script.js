@@ -18,6 +18,7 @@ function setGame() {
     document.getElementById("board").appendChild(tile)
   }
 
+
   setInterval(setMole, 800)
   setInterval(setPlant, 2000)
 }
