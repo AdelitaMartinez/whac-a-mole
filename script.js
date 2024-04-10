@@ -1,4 +1,5 @@
 let currMoleTile;
+let currPlantTile;
 
 window.onload = function () {
   setGame()
@@ -24,10 +25,28 @@ function getRandomTile() {
 
 function setMole() {
 
+  if (currMoleTile) {
+    currMoleTile.innerHTML = ""
+  }
+
   let mole = document.createElement("img")
   mole.src = "./monty-mole.png"
 
   let num = getRandomTile()
   currMoleTile = document.getElementById(num)
   currMoleTile.appendChild(mole)
+}
+
+function setPlant() {
+
+  if (currPlantTile) {
+    currPlantTile.innerHTML = ""
+  }
+
+  let plant = document.createElement("img")
+  plant.src = "./piranha-plant.png"
+
+  let num = getRandomTile()
+  currPlantTile = document.getElementById(num)
+  currMoleTile.appendChild(plant)
 }
