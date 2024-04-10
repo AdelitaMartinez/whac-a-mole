@@ -14,6 +14,7 @@ function setGame() {
     
     let tile = document.createElement("div")
     tile.id = i.toString()
+    tile.addEventListener("click", selectTile)
     document.getElementById("board").appendChild(tile)
   }
 
@@ -61,4 +62,20 @@ function setPlant() {
 
   currPlantTile = document.getElementById(num)
   currPlantTile.appendChild(plant)
+}
+
+function selectTile() {
+  // If tile clicked is the same tile that mole is on
+  if (this == currMoleTile) {
+    // Then increase score by 10
+      score += 10
+      // Change score (starts at 0) to current score
+      document.getElementById("score").innerText = score.toString()
+  }
+  // else if the tile clicked is the same tile that the plant is on 
+  else if (this == currPlantTile){
+    // Then notify that the game is over and current score
+    document.getElementById("score").innerText = "Game Over: " + score.toString();
+    gameOver = true;
+  }
 }
