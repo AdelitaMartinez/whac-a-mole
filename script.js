@@ -18,7 +18,7 @@ function setGame() {
     document.getElementById("board").appendChild(tile)
   }
 
-  setInterval(setMole, 1000) // 1000 miliseconds = 1 seconds
+  setInterval(setMole, 800)
   setInterval(setPlant, 2000)
 }
 
@@ -29,6 +29,10 @@ function getRandomTile() {
 
 function setMole() {
 
+  if(gameOver){
+    return;
+  }
+
   if (currMoleTile) {
     currMoleTile.innerHTML = ""
   }
@@ -37,7 +41,7 @@ function setMole() {
   mole.src = "./monty-mole.png"
 
   if (currPlantTile && currPlantTile.id == num) {
-    return;
+    return setMole();
   }
 
   let num = getRandomTile()
@@ -46,6 +50,10 @@ function setMole() {
 }
 
 function setPlant() {
+
+  if (gameOver) {
+    return;
+  }
 
   if (currPlantTile) {
     currPlantTile.innerHTML = ""
@@ -57,7 +65,7 @@ function setPlant() {
   let num = getRandomTile()
 
   if (currMoleTile && currMoleTile.id == num) {
-    return;
+    return setPlant();
   }
 
   currPlantTile = document.getElementById(num)
@@ -65,6 +73,10 @@ function setPlant() {
 }
 
 function selectTile() {
+  if (gameOver) {
+    return;
+  }
+
   // If tile clicked is the same tile that mole is on
   if (this == currMoleTile) {
     // Then increase score by 10
