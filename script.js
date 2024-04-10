@@ -1,5 +1,7 @@
 let currMoleTile;
 let currPlantTile;
+let score = 0;
+let gameOver = false;
 
 window.onload = function () {
   setGame()
@@ -15,7 +17,8 @@ function setGame() {
     document.getElementById("board").appendChild(tile)
   }
 
-  setInterval(setMole, 2000) // 2000 miliseconds = 2 seconds
+  setInterval(setMole, 1000) // 1000 miliseconds = 1 seconds
+  setInterval(setPlant, 2000)
 }
 
 function getRandomTile() {
@@ -32,6 +35,10 @@ function setMole() {
   let mole = document.createElement("img")
   mole.src = "./monty-mole.png"
 
+  if (currPlantTile && currPlantTile.id == num) {
+    return;
+  }
+
   let num = getRandomTile()
   currMoleTile = document.getElementById(num)
   currMoleTile.appendChild(mole)
@@ -47,6 +54,11 @@ function setPlant() {
   plant.src = "./piranha-plant.png"
 
   let num = getRandomTile()
+
+  if (currMoleTile && currMoleTile.id == num) {
+    return;
+  }
+
   currPlantTile = document.getElementById(num)
-  currMoleTile.appendChild(plant)
+  currPlantTile.appendChild(plant)
 }
