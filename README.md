@@ -1,6 +1,6 @@
 # Whac-A-Mole Game
 
-This is a fun and simple Whac-A-Mole game implemented using HTML, CSS, and JavaScript. The idea for this game was inspired by a video tutorial by Kenny Yip Coding on YouTube, with modifications and enhancements made by myself.
+This is a fun and simple Whac-A-Mole game implemented using HTML, CSS, and JavaScript. The idea for this game was inspired by a video tutorial by Kenny Yip Coding on YouTube, with modifications and enhancements made by myself. All images used are in the repository. 
 
 
 ## Features
